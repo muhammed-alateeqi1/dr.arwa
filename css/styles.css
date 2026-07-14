@@ -299,7 +299,7 @@ button:focus-visible{
 .card__scroll{
   flex: 1;
   overflow-y: auto;
-  padding: 34px 28px 26px;
+  padding: 30px 28px 22px;
   -webkit-overflow-scrolling: touch;
   mask-image: linear-gradient(to bottom, transparent 0, #000 22px, #000 calc(100% - 22px), transparent 100%);
 }
@@ -308,19 +308,19 @@ button:focus-visible{
 
 .card__line{
   margin: 0;
-  font-size: clamp(1rem, 4.1vw, 1.14rem);
-  line-height: 1.85;
+  font-size: clamp(.9rem, 3.7vw, 1.02rem);
+  line-height: 1.68;
   color: var(--ink-0);
   font-weight: 400;
   white-space: pre-wrap;
 }
-.card__line--gap{ margin-top: 1.15em; }
-.card__line--after-dedication{ margin-top: 1.5em; }
+.card__line--gap{ margin-top: .95em; }
+.card__line--after-dedication{ margin-top: 1.25em; }
 
 .card__line--dedication{
   text-align: center;
   color: var(--gold-300);
-  font-size: clamp(.9rem, 3.6vw, 1rem);
+  font-size: clamp(.82rem, 3.3vw, .92rem);
   font-weight: 600;
 }
 
@@ -330,9 +330,9 @@ button:focus-visible{
 
 .card__line--signature{
   position: relative;
-  margin-top: 1.85em;
-  padding-top: 1.15em;
-  font-size: .96rem;
+  margin-top: 1.5em;
+  padding-top: .95em;
+  font-size: .88rem;
   color: var(--gold-300);
   opacity: .82;
   transform: rotate(-1.1deg);
