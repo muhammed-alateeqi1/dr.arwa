@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>🤍 هدية خاصة</title>
+<meta name="description" content="هدية رقمية صغيرة، صُنعت خصيصًا لكِ.">
+<meta name="theme-color" content="#1c6b3f">
+<meta name="color-scheme" content="dark">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="images/icon-512.png" sizes="512x512" type="image/png">
+<link rel="apple-touch-icon" href="images/icon-180.png">
+<link rel="preload" as="image" href="images/pineapple.webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="scene" aria-hidden="false">
+
+  <!-- ============ AMBIENT BACKGROUND (main experience) ============ -->
+  <div class="backdrop" aria-hidden="true">
+    <div class="backdrop__glow backdrop__glow--top"></div>
+    <div class="backdrop__glow backdrop__glow--bottom"></div>
+    <div class="backdrop__vignette"></div>
+
+    <svg class="motif motif--a" viewBox="0 0 200 320" aria-hidden="true">
+      <use href="#pineapple-motif"></use>
+    </svg>
+    <svg class="motif motif--b" viewBox="0 0 200 320" aria-hidden="true">
+      <use href="#pineapple-motif"></use>
+    </svg>
+    <svg class="motif motif--c" viewBox="0 0 200 320" aria-hidden="true">
+      <use href="#pineapple-motif"></use>
+    </svg>
+
+    <div class="particles" id="particles"></div>
+  </div>
+
+  <!-- Shared geometric pineapple motif, referenced by <use> above -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="pineapple-motif" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M100 130 L60 210 L70 270 L100 300 L130 270 L140 210 Z"/>
+        <path d="M60 210 L100 230 L140 210"/>
+        <path d="M70 270 L100 260 L130 270"/>
+        <path d="M100 130 L100 300"/>
+        <path d="M100 120 L82 60 L60 20"/>
+        <path d="M100 120 L100 40 L100 5"/>
+        <path d="M100 120 L118 60 L140 20"/>
+        <path d="M100 120 L70 75 L45 45"/>
+        <path d="M100 120 L130 75 L155 45"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- ============ MAIN EXPERIENCE ============ -->
+  <main class="experience" id="experience">
+    <header class="brand">
+      <img class="brand__logo" src="images/logo.png" width="120" height="212" alt="" draggable="false">
+    </header>
+
+    <section class="card" id="card">
+      <div class="card__glow" aria-hidden="true"></div>
+
+      <!-- Closed / invitation state -->
+      <button class="card__seal" id="seal" type="button" aria-label="افتحي هديتك">
+        <span class="card__seal-ring"></span>
+        <img class="card__seal-mark" src="images/logo.png" width="60" height="106" alt="" draggable="false">
+        <span class="card__seal-label">هدية، صُنعت خصيصًا لكِ</span>
+        <span class="card__seal-hint">اضغطي للفتح</span>
+      </button>
+
+      <!-- Message contents, revealed after seal opens; lines are typed in one continuous top-to-bottom pass -->
+      <div class="card__body" id="cardBody" hidden>
+        <div class="card__scroll">
+          <div class="card__message" id="message" aria-live="off"></div>
+        </div>
+      </div>
+
+      <button class="card__replay" id="replay" type="button" aria-label="إعادة التجربة" hidden>
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <path d="M20 12a8 8 0 1 1-2.34-5.66" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </section>
+  </main>
+
+  <!-- ============ OPENING ANIMATION ============ -->
+  <div class="intro" id="intro">
+    <div class="intro__bg" aria-hidden="true">
+      <div class="intro__glow"></div>
+      <div class="intro__rays"></div>
+    </div>
+
+    <div class="intro__stage">
+      <div class="intro__shadow" id="pineappleShadow" aria-hidden="true"></div>
+      <div class="intro__pineapple" id="pineapple" aria-hidden="true">
+        <div class="intro__pineapple-glow"></div>
+        <picture>
+          <source srcset="images/pineapple.webp" type="image/webp">
+          <img src="images/pineapple.png" alt="" draggable="false">
+        </picture>
+      </div>
+    </div>
+
+    <p class="intro__line" id="introLine" aria-hidden="true">
+      <span class="intro__word" style="--i:0">فتحتِ</span>
+      <span class="intro__word" style="--i:1">للتو</span>
+      <span class="intro__word" style="--i:2">هدية</span>
+      <span class="intro__word" style="--i:3">صُنعت</span>
+      <span class="intro__word" style="--i:4">خصيصًا</span>
+      <span class="intro__word intro__word--gold" style="--i:5">لكِ.</span>
+    </p>
+
+    <button class="intro__skip" id="skipIntro" type="button">تخطي</button>
+  </div>
+
+  <div class="flash" id="flash" aria-hidden="true"></div>
+</div>
+
+<script src="js/app.js" defer></script>
+</body>
+</html>
